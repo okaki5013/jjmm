@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="🦋荒らし王国産レイド🦋" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AK Web Spammer</title>
+  <title>8qg8 Spammer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* スクロールバーのスタイル */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #202225; border-radius: 3px; }
     ::-webkit-scrollbar-thumb { background: #5865f2; border-radius: 3px; }
@@ -15,14 +16,14 @@
     *, *::before, *::after { box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg,#007CFF,#001C3E);
+      background: linear-gradient(135deg,#2f3136,#1e1f22);
       color:#fff;
       margin:0; padding:0;
       display:flex; justify-content:center; align-items:center;
       height:100vh;
     }
     .card {
-      background:#007CFF;
+      background:#36393f;
       padding:32px;
       border-radius:20px;
       box-shadow:0 15px 35px rgba(0,0,0,.5);
@@ -37,6 +38,7 @@
     h2 { color:#adb8ff; text-align:center; margin:0 0 24px; font-weight:600; }
     label { display:block; margin-top:18px; font-size:14px; }
  
+    /* テキスト入力 */
     input[type="text"], textarea {
       width:100%; padding:10px; margin-top:6px;
       border-radius:8px; border:none;
@@ -55,13 +57,16 @@
     input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance:none; margin:0;
     }
-     .row {
+ 
+    /* フレックス行 */
+    .row {
       display:flex; gap:12px; align-items:center;
     }
     .row > * { flex:none; }
     .row label,
     .row .checkbox-container { margin-top:0; }
  
+    /* トグルスイッチ */
     .checkbox-container {
       display:flex; align-items:center; gap:8px;
       cursor:pointer; font-size:14px; user-select:none;
@@ -91,6 +96,7 @@
       color:#adb8ff;
     }
  
+    /* ボタン */
     button.primary {
       margin-top:24px; width:100%; padding:14px;
       border:none; border-radius:14px;
@@ -134,6 +140,7 @@
     button.secondary:hover::after { opacity:1; }
     button.secondary:active::after { background:rgba(255,255,255,0.2); }
  
+    /* 停止・退出ボタン強調 */
     #stopSpam, #leaveBtn {
       width:48%; padding:10px;
       border:none; border-radius:10px;
@@ -144,7 +151,7 @@
       box-shadow: 0 4px 10px rgba(255,0,0,0.3);
     }
     #stopSpam:hover, #leaveBtn:hover {
-      background:linear-gradient(135deg,#00DEAD,#00FFC7);
+      background:linear-gradient(135deg,#c0392b,#e74c3c);
       transform:scale(1.03);
     }
     #stopSpam:active, #leaveBtn:active {
@@ -168,7 +175,7 @@
     .detail-content { transform-origin:top center; transform:scaleY(0); opacity:0; transition:transform .3s ease, opacity .3s ease; }
     details[open] .detail-content { transform:scaleY(1); opacity:1; }
  
-    #log { margin-top:20px; padding:10px; height:120px; overflow-y:auto; background:#001C3E; border-radius:10px; font-family:monospace; font-size:12px; white-space:pre-wrap; resize: vertical;}
+    #log { margin-top:20px; padding:10px; height:120px; overflow-y:auto; background:#202225; border-radius:10px; font-family:monospace; font-size:12px; white-space:pre-wrap; resize: vertical;}
     @media (max-width: 600px) {
       .card {
         padding: 16px;
@@ -290,7 +297,7 @@
 </head>
 <body>
   <div class="card">
-    <h2>AK Web Spammer</h2>
+    <h2>8qg8 Spammer</h2>
     <form id="form">
       <label>トークン
         <textarea id="tokens" rows="4" placeholder="カンマ / 改行 / スペースで区切る MTM1ODc4MTE3NTIzMzI1MzU*****,MTEwMDU5Njc1NjQ1NjE2MTMwM*****,..."></textarea>
@@ -309,6 +316,10 @@
     <label>メッセージ内容</label>
     <div class="row">
       <label class="radio-container">
+        <input type="radio" name="messageOption" value="A" required checked>
+        <span>通常宣伝文</span>
+      </label>
+      <label class="radio-container">
         <input type="radio" name="messageOption" value="B">
         <span>クラッシュGIF宣伝文</span>
       </label>
@@ -320,11 +331,11 @@
     </div>
       <label class="checkbox-container">
         <input type="checkbox" id="allmention" checked>
-        <span>全体メンション</span>
+        <span>everyone</span>
       </label>
       <label class="checkbox-container">
         <input type="checkbox" id="randomize">
-        <span>メッセージのランダマイズ</span>
+        <span>ランダマイズ</span>
       </label>
       <div class="row">
         <label>メッセージ送信間隔
